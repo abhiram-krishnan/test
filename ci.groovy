@@ -25,8 +25,10 @@ node("trigger"){
     
     finally {
             withCredentials([usernamePassword(credentialsId: '55b3fdf1-d87f-41b0-87e9-5d7e14517498', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
-            echo "Username = " ${USERNAME}
-            echo "Password = " ${PASSWORD}
+            echo "Username = " 
+	    echo "${USERNAME}"
+            echo "Password = " 
+            echo "${PASSWORD}"
             echo "Pipeline result: ${currentBuild.result}"
             echo "Pipeline currentResult: ${currentBuild.currentResult}"
        }
