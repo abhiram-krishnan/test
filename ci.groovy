@@ -39,7 +39,7 @@ node("trigger"){
             '''
 	    echo "The change URL = "
 	    echo "${env.CHANGE_URL}"
-            def change_url = ${env.CHANGE_URL}
+            def change_url = env.CHANGE_URL
 	    project = change_url.tokenize('/')[3]
 	    repo = change_url.tokenize('/')[4]
             echo "Project name = ${project}"
