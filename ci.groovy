@@ -1,3 +1,6 @@
+String proxy_url = "proxy.jf.intel.com"
+String proxy_port = "911"
+
 node("trigger"){
         try {
         stage ('Init') {
@@ -34,6 +37,8 @@ node("trigger"){
             echo "Password = " 
             echo "${PASSWORD}"
             '''
+	    echo "The change URL = "
+	    echo "${env.CHANGE_URL}"
             echo "Pipeline result: ${currentBuild.result}"
             echo "Pipeline currentResult: ${currentBuild.currentResult}"
        }
