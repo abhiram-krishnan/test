@@ -47,6 +47,6 @@ node("trigger"){
             echo "Pipeline currentResult: ${currentBuild.currentResult}"
        }
     }
-    //commitId = sh(returnStdout: true, script: 'git rev-parse HEAD')
-    //echo commitId
+    commitId = sh(returnStdout: true, script: 'git rev-parse HEAD')
+    echo commitId
 }
