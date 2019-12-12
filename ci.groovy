@@ -1,6 +1,3 @@
-String proxy_url = "proxy.jf.intel.com"
-String proxy_port = "911"
-
 node("trigger"){
         try {
         stage ('Init') {
