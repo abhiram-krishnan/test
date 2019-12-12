@@ -24,7 +24,7 @@ node("trigger"){
     }
     
     finally {
-            withCredentials([usernamePassword(credentialsId: '55b3fdf1-d87f-41b0-87e9-5d7e14517498', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+            withCredentials([usernamePassword(credentialsId: '', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
             sh '''
             if [ "${USERNAME}" = "abhiram-krishnan" ]; then
                 echo "It's my account"
