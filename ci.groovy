@@ -24,7 +24,6 @@ node("trigger"){
     }
     
     finally {
-            withCredentials([usernamePassword(credentialsId: '', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
             sh '''
                 sleep 240
             '''
@@ -39,7 +38,6 @@ node("trigger"){
 	    echo repo
             echo "Pipeline result: ${currentBuild.result}"
             echo "Pipeline currentResult: ${currentBuild.currentResult}"
-       }
     }
     commitId = sh(returnStdout: true, script: 'git rev-parse HEAD')
     echo commitId
