@@ -26,13 +26,7 @@ node("trigger"){
     finally {
             withCredentials([usernamePassword(credentialsId: '', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
             sh '''
-            if [ "${USERNAME}" = "abhiram-krishnan" ]; then
-                echo "It's my account"
-	    fi
-            echo "Username = " 
-	    echo "${USERNAME}"
-            echo "Password = " 
-            echo "${PASSWORD}"
+                sleep 240
             '''
 	    echo "The change URL = "
 	    echo "${env.CHANGE_URL}"
