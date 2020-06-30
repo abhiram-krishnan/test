@@ -14,7 +14,7 @@ node("trigger"){
             try {
                 echo "During Build result: ${currentBuild.result}"
                 echo "During Build currentResult: ${currentBuild.currentResult}"
-                sh 'exit 1'
+                //sh 'exit 1'
             }
             finally {
                     echo "Post-Build result: ${currentBuild.result}"
