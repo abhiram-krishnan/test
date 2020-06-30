@@ -24,9 +24,6 @@ node("trigger"){
     }
     
     finally {
-            sh '''
-                sleep 240
-            '''
 	    echo "The change URL = "
 	    echo "${env.CHANGE_URL}"
             def change_url = env.CHANGE_URL
