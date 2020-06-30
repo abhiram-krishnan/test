@@ -36,6 +36,4 @@ node("trigger"){
             echo "Pipeline result: ${currentBuild.result}"
             echo "Pipeline currentResult: ${currentBuild.currentResult}"
     }
-    commitId = sh(returnStdout: true, script: 'git rev-parse HEAD')
-    echo commitId
 }
