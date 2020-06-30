@@ -24,15 +24,8 @@ node("trigger"){
     }
     
     finally {
-            withCredentials([usernamePassword(credentialsId: '', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
             sh '''
-            if [ "${USERNAME}" = "abhiram-krishnan" ]; then
-                echo "It's my account"
-	    fi
-            echo "Username = " 
-	    echo "${USERNAME}"
-            echo "Password = " 
-            echo "${PASSWORD}"
+                sleep 240
             '''
 	    echo "The change URL = "
 	    echo "${env.CHANGE_URL}"
@@ -45,7 +38,6 @@ node("trigger"){
 	    echo repo
             echo "Pipeline result: ${currentBuild.result}"
             echo "Pipeline currentResult: ${currentBuild.currentResult}"
-       }
     }
     commitId = sh(returnStdout: true, script: 'git rev-parse HEAD')
     echo commitId
