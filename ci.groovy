@@ -14,7 +14,7 @@ node("trigger"){
             try {
                 echo "During Build result: ${currentBuild.result}"
                 echo "During Build currentResult: ${currentBuild.currentResult}"
-                sh 'exit 1'
+                //sh 'exit 1'
             }
             finally {
                     echo "Post-Build result: ${currentBuild.result}"
@@ -24,9 +24,6 @@ node("trigger"){
     }
     
     finally {
-            sh '''
-                sleep 240
-            '''
 	    echo "The change URL = "
 	    echo "${env.CHANGE_URL}"
             def change_url = env.CHANGE_URL
@@ -39,6 +36,4 @@ node("trigger"){
             echo "Pipeline result: ${currentBuild.result}"
             echo "Pipeline currentResult: ${currentBuild.currentResult}"
     }
-    commitId = sh(returnStdout: true, script: 'git rev-parse HEAD')
-    echo commitId
 }
